@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="main-header">
+        <div class="logo">
+          <img src="https://th.bing.com/th/id/OIP.EdBkp6Bm7FHoQ12GIwZ6qQAAAA?rs=1&pid=ImgDetMain" alt="Company Logo">
+        </div>
+        <div class="contact-details">
+          <p>Email: contact@example.com</p>
+          <p>Phone: +1 (123) 456-7890</p>
+        </div>
+      </header>
+    
+      <!-- Subtitle Block with Navigation Links -->
+      <div class="subtitle-block">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+  <!-- Unique Section with Dynamic Background for About Page -->
+  <section class="dynamic-background-section-about" id="about-section">
+    <div class="content">
+      <h2>Services</h2>
+    </div>
+  </section>
+  <!-- Service Section -->
+  <section class="service-intro">
+    <div class="service-description">
+      <h2>Our Real Estate Services</h2>
+      <p>
+        At HA Developers, we provide exceptional real estate services tailored to meet your needs. 
+        Whether you're buying, selling, or renting, we offer expert advice, professional services, 
+        and personalized solutions that ensure you make the right decisions for your real estate investments.
+      </p>
+    </div>
+    <div class="service-image">
+      <img src="https://thumbs.dreamstime.com/b/conceptual-hand-writing-showing-our-services-concept-meaning-occupation-function-serving-intangible-products-male-wear-160644151.jpg" alt="Service Image">
+    </div>
+  </section>
+
+    <!-- Header -->
+  <header class="services-header">
+    <h2>Our Services</h2>
+    <p>Explore the services we offer to help you with all your real estate needs.</p>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="service-row">
+      <div class="service" onclick="showDescription(1)">
+        <img src="https://jpmc2000.com/wp-content/uploads/2019/10/real-estate.jpg" alt="Service 1">
+      </div>
+      <div class="service" onclick="showDescription(2)">
+        <img src="https://blog.ipleaders.in/wp-content/uploads/2020/09/house-and-key-on-wooden-table-on-sunlight-background-building-concept-concept-of-selling-real-estate-1138190269-563869f4765c46a3a194e83d80ca61eb.jpg" alt="Service 2">
+      </div>
+      <div class="service" onclick="showDescription(3)">
+        <img src="https://smartmoneymamas.com/wp-content/uploads/2019/04/Mistakes-Buying-a-House-Feat.jpg" alt="Service 3">
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service" onclick="showDescription(4)">
+        <img src="https://th.bing.com/th/id/OIP.TmijuV7_LfNCAn_f3AJvqgHaEK?rs=1&pid=ImgDetMain" alt="Service 4">
+      </div>
+      <div class="service" onclick="showDescription(5)">
+        <img src="https://i.imgur.com/Odg2JXL.jpg" alt="Service 5">
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service" onclick="showDescription(6)">
+        <img src="https://www.caycon.com/wp-content/uploads/2019/10/become-a-residential-real-estate-developer.jpg" alt="Service 6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup for Service Description -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">X</span>
+      <h3 id="popup-title">Service Title</h3>
+      <p id="popup-description">Service Description</p>
+    </div>
+  </div>
+
+    <!-- FAQ Section -->
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(1)">
+        <h3>What services do you offer?</h3>
+        <span class="arrow" id="arrow1">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer1">
+        <p>We offer a wide range of real estate services including property management, buying and selling homes, commercial real estate, and investment consulting.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(2)">
+        <h3>How can I contact you for consultation?</h3>
+        <span class="arrow" id="arrow2">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer2">
+        <p>You can contact us by phone, email, or by filling out the contact form on our website. We will get back to you as soon as possible.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(3)">
+        <h3>Do you offer services for commercial properties?</h3>
+        <span class="arrow" id="arrow3">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer3">
+        <p>Yes, we specialize in commercial real estate services, including buying, selling, and leasing retail spaces, office buildings, and industrial properties.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(4)">
+        <h3>How do I start the process of buying a home?</h3>
+        <span class="arrow" id="arrow4">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer4">
+        <p>First, you will need to schedule a consultation with us. We will assess your needs, budget, and preferences to help you find your ideal property. Then, we guide you through the entire purchasing process.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(5)">
+        <h3>How long does it take to buy a home?</h3>
+        <span class="arrow" id="arrow5">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer5">
+        <p>The timeline for buying a home can vary depending on the market, financing, and availability of your desired property. Typically, the process takes anywhere from a few weeks to a few months.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(6)">
+        <h3>Do I need to have a real estate agent for selling my property?</h3>
+        <span class="arrow" id="arrow6">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer6">
+        <p>While it's not mandatory to have an agent, we highly recommend it. Our experienced agents can help you price, market, and negotiate the sale of your property, ensuring a smooth transaction.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(7)">
+        <h3>What should I look for when buying an investment property?</h3>
+        <span class="arrow" id="arrow7">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer7">
+        <p>When buying an investment property, consider factors like location, property condition, potential rental income, and long-term value. We can assist you in identifying the best investment opportunities.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(8)">
+        <h3>Can I buy a home with bad credit?</h3>
+        <span class="arrow" id="arrow8">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer8">
+        <p>While a higher credit score improves your chances, it's still possible to buy a home with less-than-perfect credit. We can help you explore your financing options and guide you through the process.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(9)">
+        <h3>Do you offer property management services?</h3>
+        <span class="arrow" id="arrow9">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer9">
+        <p>Yes, we offer comprehensive property management services including tenant screening, rent collection, property maintenance, and more. Let us handle the day-to-day operations of your rental property.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(10)">
+        <h3>How can I schedule a consultation?</h3>
+        <span class="arrow" id="arrow10">&#9660;</span>
+      </div>
+      <div class="faq-answer" id="answer10">
+        <p>Simply fill out the contact form on our website or give us a call to schedule a consultation. We'll work with your availability to set up a convenient time for you.</p>
+      </div>
+    </div>
+
+  </section>
+   <!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h4>Company Name</h4>
+        <p class="footer-description">Your trusted real estate partner providing high-quality homes and office spaces.</p>
+        <p><strong>Address:</strong> 123 Real Estate St, City, Country</p>
+        <p><strong>Email:</strong> contact@example.com</p>
+        <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+      </div>
+  
+      <div class="footer-middle">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AboutUs.html">About Us</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-right">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+            <a href="#" target="_blank"><img src="https://th.bing.com/th/id/OIP.Ua5AXhtGRgPuisZVmetclQHaFL?rs=1&pid=ImgDetMain" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="https://th.bing.com/th/id/R.c5ad0581106cbcc8bb6e654d08362c0a?rik=HxhkLGdlB41KCQ&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f5%2fInstagram-Logo-PNG-Image.png&ehk=9tpsBD6oOcSKvZ4ZBZeY5FU8PhVUfMT4HJLDpJzk2yY%3d&risl=&pid=ImgRaw&r=0" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="https://webstockreview.net/images/twitter-icons-png-1.png" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/022/424/462/small_2x/linkedin-logo-editorial-free-vector.jpg" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+  const section = document.getElementById('about-section');
+  const scrollPosition = window.scrollY;
+  
+  // Apply the parallax effect to the About section when scrolled
+  section.style.backgroundPositionY = `${scrollPosition * 0.5}px`; // Adjust the multiplier for different effects
+});
+
+function showDescription(serviceId) {
+  // Service descriptions
+  const descriptions = [
+    { title: "Real Estate Consultation", description: "Our team of experts offers personalized advice to help you navigate the complex world of real estate investments and home buying." },
+    { title: "Property Management", description: "We provide comprehensive property management services, from maintenance to tenant relations, ensuring your property is always in top condition." },
+    { title: "Buying and Selling Homes", description: "We specialize in helping clients buy and sell homes, ensuring the best deals and a smooth process from start to finish." },
+    { title: "Commercial Real Estate", description: "Our team offers professional services for buying, selling, and leasing commercial properties, from retail spaces to office buildings." },
+    { title: "Luxury Property Services", description: "We offer exclusive services for luxury real estate, providing clients with access to high-end homes and premium property opportunities." },
+    { title: "Investment Consulting", description: "Our investment consulting service helps clients make informed decisions about real estate investments, guiding them through high-yield opportunities." }
+  ];
+
+  // Get the title and description from the array based on serviceId
+  const service = descriptions[serviceId - 1];
+
+  // Set the content of the popup
+  document.getElementById("popup-title").innerText = service.title;
+  document.getElementById("popup-description").innerText = service.description;
+
+  // Show the popup
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  // Close the popup
+  document.getElementById("popup").style.display = "none";
+}
+
+// Toggle the FAQ answer visibility and animate the arrow
+function toggleFAQ(faqNumber) {
+  var answer = document.getElementById('answer' + faqNumber);
+  var arrow = document.getElementById('arrow' + faqNumber);
+
+  // Toggle visibility of the answer
+  if (answer.style.display === 'block') {
+    answer.style.display = 'none';
+    arrow.style.transform = 'rotate(0deg)'; // Reset arrow to up
+  } else {
+    answer.style.display = 'block';
+    arrow.style.transform = 'rotate(180deg)'; // Rotate arrow to down
+  }
+}
+</script>
+  </body>
+</html>

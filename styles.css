@@ -1,0 +1,1428 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header Styling */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  }
+  
+  .logo img {
+    max-height: 50px; /* Keep logo size manageable */
+  }
+  
+  .contact-details {
+    text-align: right;
+    font-size: 0.9rem;
+  }
+  
+  .contact-details p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* Subtitle Block with Navigation Links */
+  .subtitle-block {
+    background-color: burlywood; /* Green background */
+    color: white;
+    padding: 10px 0;
+    
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between links */
+    flex-wrap: wrap; /* Wrap links on smaller screens */
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #FFD700; /* Gold color on hover */
+  }
+  
+  /* Responsive Design Using Media Queries */
+  @media (max-width: 768px) {
+    .main-header {
+      flex-direction: column; /* Stack logo and contact details */
+      align-items: center;
+      text-align: center;
+    }
+  
+    .contact-details {
+      margin-top: 10px; /* Add spacing between logo and contact */
+    }
+  
+    .nav-links {
+      gap: 10px; /* Reduce gap between links for smaller screens */
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-links a {
+      font-size: 0.8rem; /* Adjust link font size for very small screens */
+    }
+  
+    .contact-details {
+      font-size: 0.8rem; /* Adjust contact details font size */
+    }
+  }
+  /* Dynamic Background Section */
+  .dynamic-background {
+    background-image: url('https://officechai.com/wp-content/uploads/2015/05/Cyberecture-egg-shaped-building-mumbai.jpg'); /* Replace with your dynamic image URL */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Parallax effect */
+    color: white;
+    padding: 300px 50px; /* Adjust padding for content */
+    text-align: center;
+    height: 100vh;
+    
+  }
+  
+  .dynamic-background h2 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  .dynamic-background p {
+    font-size: 1.2rem;
+  }
+  
+  /* Parallax Effect (Optional) */
+  @media (max-width: 768px) {
+    .dynamic-background {
+      background-attachment: scroll; /* Disable parallax on smaller screens */
+    }
+  }
+  /* Features Section */
+.features {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .features-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-decoration: underline; /* Underline the header */
+    display: inline-block;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .feature {
+    text-align: center;
+  }
+  
+  .feature img {
+    width: 100%;
+    max-width: 200px; /* Control the size of the images */
+    margin-bottom: 10px;
+    height: 250px;
+  }
+  
+  .feature p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Responsive Features Grid */
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two images per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .features-grid {
+      grid-template-columns: 1fr; /* One image per row on very small screens */
+    }
+  }
+  .features a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent element */
+  }
+  
+  .features a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  .feature img {
+    transition: transform 0.3s ease;
+  }
+  
+  .feature img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  .spacer{
+    height: 5vh;
+  }
+  /* Step Section Styles */
+.steps-to-contact {
+    padding: 50px;
+    background-color: #f9f9f9;
+  }
+  
+  .steps-header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+  }
+  
+  /* Step Layout */
+  .step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: nowrap; /* Prevent wrapping for normal layout */
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1s forwards; /* Fade-in and slide-up animation */
+    animation-delay: 0.5s; /* Delay to create staggered effect */
+  }
+  
+  /* Step 1 and Step 3 - Odd numbered steps */
+  .step.step-odd .step-image {
+    order: 1;  /* Image first for odd steps */
+    width: 40%;
+    margin-right: 30px; /* Adds space between image and content */
+    animation: slideInLeft 1s forwards; /* Slide-in left animation */
+  }
+  
+  .step.step-odd .step-content {
+    order: 2;  /* Content second for odd steps */
+    flex-grow: 1;
+    animation: slideInRight 1s forwards; /* Slide-in right animation */
+  }
+  
+  /* Step 2 and Step 4 - Even numbered steps */
+  .step.step-even .step-image {
+    order: 2;  /* Image second for even steps */
+    width: 40%;
+    animation: slideInRight 1s forwards; /* Slide-in right animation */
+  }
+  
+  .step.step-even .step-content {
+    order: 1;  /* Content first for even steps */
+    flex-grow: 1;
+    padding-left: 30px;
+    animation: slideInLeft 1s forwards; /* Slide-in left animation */
+  }
+  
+  /* Align Step 2 and Step 4 to the left */
+  .step.step-even .step-content {
+    text-align: left;
+  }
+  
+  .step.step-even .step-image {
+    text-align: left;
+  }
+  
+  /* Styling for the step number */
+  .step-number {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .step h4 {
+    margin-bottom: 10px;
+  }
+  
+  /* Image Styles */
+  .step-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    height: 300px;
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-up effect for the steps */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Start below */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* End in normal position */
+    }
+  }
+  
+  /* Slide-in from the left effect */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%); /* Start from the left off-screen */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* End at normal position */
+    }
+  }
+  
+  /* Slide-in from the right effect */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%); /* Start from the right off-screen */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* End at normal position */
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .step {
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap; /* Allow wrapping in smaller screens */
+    }
+  
+    .step-image {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    .step-content {
+      width: 100%;
+      text-align: center;
+    }
+  
+    /* Ensure left-aligned steps are still aligned to the left on small screens */
+    .step.step-even .step-content {
+      text-align: left;
+    }
+  }
+  /* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  }
+  
+  .footer-left, .footer-middle, .footer-right {
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  
+  .footer-left h4, .footer-middle h4, .footer-right h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin: 8px 0;
+  }
+  
+  ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  ul li a:hover {
+    color: #f1c40f; /* Hover effect for links */
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.1); /* Hover effect for social icons */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-left, .footer-middle, .footer-right {
+      width: 100%; /* Stack elements vertically on small screens */
+      text-align: center;
+    }
+  
+    .footer-content {
+      flex-direction: column; /* Stack the sections vertically on smaller screens */
+    }
+  }
+/* Unique Dynamic Background Section */
+.real-estate-dynamic-background {
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 80vh;
+  }
+  
+  /* Dynamic Background Image for This Section */
+  .real-estate-dynamic-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://png.pngtree.com/background/20230317/original/pngtree-beautiful-background-of-high-rise-buildings-picture-image_2148726.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    animation: realEstateBackgroundZoom 10s infinite alternate ease-in-out; /* Unique animation name */
+    z-index: -1; /* Places the background behind the content */
+    filter: brightness(0.5); /* Optional: Darkens the image for better text readability */
+  }
+  
+  /* Keyframe Animation for Background Zoom */
+  @keyframes realEstateBackgroundZoom {
+    0% {
+      transform: scale(1); /* Normal size */
+    }
+    100% {
+      transform: scale(1.1); /* Slight zoom-in */
+    }
+  }
+  
+  /* Content Styling for This Section */
+  .real-estate-dynamic-background .content {
+    z-index: 1; /* Ensures content stays above the background */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .real-estate-dynamic-background .content h2 {
+    font-size: 2.5rem; /* Adjust font size */
+    margin: 0;
+  }
+  
+  .real-estate-dynamic-background .content p {
+    font-size: 1.2rem; /* Adjust font size */
+    margin: 10px 0 0;
+  }
+  
+  /* Responsive Adjustments for This Section */
+  @media (max-width: 768px) {
+    .real-estate-dynamic-background {
+      height: 300px; /* Smaller height for mobile */
+    }
+  
+    .real-estate-dynamic-background .content h2 {
+      font-size: 1.8rem; /* Smaller text size */
+    }
+  
+    .real-estate-dynamic-background .content p {
+      font-size: 1rem; /* Smaller text size */
+    }
+  }
+  /* Title and Image with Description Section */
+.image-description-section {
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Content Container */
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    gap: 20px; /* Adds space between items */
+  }
+  
+  /* Image Styling */
+  .image-container {
+    margin-right: 20px; /* Adds space between image and description */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+    width: 400px; /* Adjust as needed */
+  }
+  
+  /* Description Styling */
+  .description-container {
+    max-width: 600px; /* Restricts text width for better readability */
+    text-align: left; /* Aligns text to the left */
+    margin-left: 80px; /* Adds space between description and image */
+  }
+  
+  .description-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .content-container {
+      flex-direction: column; /* Stack image and text vertically */
+      text-align: center; /* Center-align text on small screens */
+    }
+  
+    .image-container {
+      margin-right: 0; /* Remove margin for stacked layout */
+    }
+  
+    .description-container {
+      margin-left: 0; /* Remove margin for stacked layout */
+      text-align: center;
+    }
+  }
+  /* Common Header Styling */
+.common-header {
+    text-align: center;
+    background-color: #007BFF; /* Background color to make it stand out */
+    padding: 40px 20px;
+    color: white;
+  }
+  
+  .common-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .common-header p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+  /* Mission and Vision Section */
+.mission-vision {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* For responsiveness */
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .mission-vision .mission,
+  .mission-vision .vision {
+    flex: 1;
+    max-width: 45%; /* Ensures items don’t take up too much space */
+    min-width: 280px; /* Ensures readability on smaller screens */
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 40vh;
+  }
+  
+  /* Hover Effect for Cards */
+  .mission-vision .mission:hover,
+  .mission-vision .vision:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+  
+  .statement-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 3px solid #007BFF; /* Stylish underline */
+    display: inline-block;
+  }
+  
+  .mission-vision p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .mission-vision {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .mission-vision .mission,
+    .mission-vision .vision {
+      max-width: 100%; /* Full width for smaller screens */
+    }
+  }
+  /* Services Section Styling */
+.services {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  .services-header {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 3px solid #007BFF;
+    display: inline-block;
+  }
+  
+  .services-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .services-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .service-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    height: 30vh;
+  }
+  
+  .service-card:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .service-content {
+    padding: 20px;
+  }
+  
+  .service-content h3 {
+    font-size: 1.8rem;
+    color: #007BFF;
+    margin-bottom: 15px;
+  }
+  
+  .service-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .services-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .service-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  /* Responsive Design for Larger Screens */
+@media (min-width: 1200px) {
+    .services-grid {
+      gap: 3rem;
+    }
+  
+    .service-card {
+      width: 25%; /* Cards take up a quarter of the screen width */
+    }
+  }
+  /* Dynamic Background Section for Service Page */
+.dynamic-background-section-about {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust the height as needed */
+    background: url('https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/6715927/1820/1213/m1/fpnw/wm1/qlhkdrvnis2hjtwjua6nslqqk2llaczne17xyiikorlxxtur17onfh1exisssct1-.jpg?1563755511&s=905ae54a4f4fdcbfd314f1edfdaa46f0') no-repeat center center/cover; /* Replace with your image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .dynamic-background-section-about .content {
+    text-align: center;
+  }
+  
+  .dynamic-background-section-about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .dynamic-background-section-about p {
+    font-size: 1.2rem;
+  }
+  
+  /* Optional: Create a parallax effect for About page */
+  .dynamic-background-section-about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: cover;
+    filter: blur(5px); /* Optional: add blur effect */
+    z-index: -1;
+    transform: scale(1.1);
+    will-change: transform;
+  }
+  @media (max-width: 768px) {
+    .dynamic-background-section-about {
+      height: 400px; /* Adjust height for smaller screens */
+    }
+  
+    .dynamic-background-section-about h2 {
+      font-size: 2rem; /* Slightly smaller font size */
+    }
+  
+    .dynamic-background-section-about p {
+      font-size: 1rem; /* Slightly smaller text */
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 480px) {
+    .dynamic-background-section-about {
+      height: 300px; /* Adjust height even more */
+    }
+  
+    .dynamic-background-section-about h2 {
+      font-size: 1.5rem; /* Even smaller font size */
+    }
+  
+    .dynamic-background-section-about p {
+      font-size: 0.9rem; /* Smaller text */
+    }
+  }
+  /* Service Section */
+.service-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 50px; /* Add space between description and image */
+  }
+  
+  .service-description {
+    flex: 1;
+    max-width: 50%; /* Allow this to take up half of the space */
+    padding-right: 30px; /* Ensure there's some space before the image */
+  }
+  
+  .service-description h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .service-description p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Service Image */
+  .service-image {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .service-image img {
+    width: 80%;
+    height: auto;
+    border-radius: 15px; /* Optional: for rounded corners */
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For tablets and smaller devices */
+  @media (max-width: 768px) {
+    .service-intro {
+      flex-direction: column; /* Stack description and image vertically */
+      gap: 30px;
+    }
+  
+    .service-description,
+    .service-image {
+      max-width: 100%;
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 480px) {
+    .service-description h2 {
+      font-size: 1.8rem;
+    }
+  
+    .service-description p {
+      font-size: 1rem;
+    }
+  }
+  /* Header Styling */
+.services-header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .services-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .services-header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Services Section */
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+  
+  .service-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .service {
+    margin: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .service img {
+    width: 200px;
+    height: 150px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .service img:hover {
+    transform: scale(1.1); /* Add hover effect */
+  }
+  
+  /* Popup Styling */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .popup h3 {
+    margin-bottom: 20px;
+  }
+  
+  .popup p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  /* Header Styling */
+.services-header {
+    text-align: center; /* Center the text */
+    padding: 50px 20px;
+    background-color: darkkhaki;
+    color: white;
+    margin: 0 auto; /* Center the whole header */
+    width: 100%; /* Make sure the header takes full width */
+  }
+  
+  .services-header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .services-header p {
+    font-size: 1.2rem;
+  }
+  
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For tablets and smaller devices */
+  @media (max-width: 768px) {
+    .service img {
+      width: 150px;
+      height: 120px;
+    }
+    .popup-content {
+        padding: 10px;
+      }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 480px) {
+    .service img {
+      width: 120px;
+      height: 100px;
+    }
+    .services-header {
+        padding: 20px 10px;
+      }
+    
+      .popup-content {
+        width: 95%;
+      }
+    
+      .close-btn {
+        font-size: 1rem;
+      }
+  }
+  .faq {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .faq h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  .faq-question h3 {
+    font-size: 1.2rem;
+  }
+  
+  .arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-answer {
+    padding: 10px;
+    display: none;
+    background-color: #fafafa;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .faq {
+      width: 90%;
+    }
+  
+    .faq h2 {
+      font-size: 1.5rem;
+    }
+  
+    .faq-question h3 {
+      font-size: 1rem;
+    }
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 3em;
+    color: #333;
+}
+
+/* Properties List */
+.properties-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Property Card */
+.property-card {
+    background-color: white;
+    border-radius: 10px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.property-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-details {
+    padding: 20px;
+}
+
+.property-title {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.property-location, .property-size, .property-bed-bath {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.view-details {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-details:hover {
+    background-color: #0056b3;
+}
+
+.price-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Responsive Design - Smaller Devices */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .properties-list {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .property-card {
+        width: 100%;
+        max-width: 350px; /* Ensures cards don't stretch too much */
+    }
+
+    .property-title {
+        font-size: 1.4em;
+    }
+
+    .property-location,
+    .property-size,
+    .property-bed-bath {
+        font-size: 0.9em;
+    }
+
+    .price-tag {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    .view-details {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+/* Further responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .property-title {
+        font-size: 1.2em;
+    }
+
+    .property-location,
+    .property-size,
+    .property-bed-bath {
+        font-size: 0.85em;
+    }
+
+    .view-details {
+        font-size: 0.8em;
+        padding: 7px;
+    }
+
+    .price-tag {
+        font-size: 1em;
+        padding: 6px;
+    }
+}
+.contact-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    color: #333;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff758c;
+    box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
+}
+
+label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+input:focus + label,
+textarea:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #9b888b;
+    background: white;
+    padding: 0 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #92757a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(255, 117, 140, 0.3);
+}
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+    color: #333;
+    background: white;
+    appearance: none; /* Remove default dropdown arrow for consistency */
+}
+
+select:focus {
+    border-color: #e8bcc3;
+    box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
+}
+
+select + label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #d7c6c9;
+    background: white;
+    padding: 0 5px;
+}
+
+/* Adjust Form Group Label for Dropdown */
+select:not([value=""]) + label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #e5c7cc;
+}
+form {
+    max-width: 600px; /* Set maximum width for larger screens */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group Styling */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #e8cdd2;
+    box-shadow: 0 0 5px rgba(255, 117, 140, 0.5);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #ff758c;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e64e6b;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    form {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 0.9rem; /* Adjust font size */
+        padding: 10px; /* Reduce padding for smaller inputs */
+    }
+
+    button {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 10px; /* Adjust button padding */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    button {
+        padding: 8px; /* Smaller padding for very small screens */
+    }
+}
+.container1 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #ede2e4, #eae1e1);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full-screen height */
+  }
+  
+  
+  
+  
